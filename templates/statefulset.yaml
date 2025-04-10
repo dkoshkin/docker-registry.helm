@@ -15,7 +15,7 @@ spec:
       app: {{ template "docker-registry.name" . }}
       release: {{ .Release.Name }}
   replicas: {{ .Values.replicaCount }}
-  serviceName: {{ template "docker-registry.headless-service-name" . }}
+  serviceName: {{ template "docker-registry.headless-service.name" . }}
   {{- if .Values.updateStrategy }}
   strategy: {{ toYaml .Values.updateStrategy | nindent 4 }}
   {{- end }}
